@@ -7,6 +7,8 @@ import {
   PawPrint,
   GlobeHemisphereEast,
   List,
+  MagnifyingGlass,
+  Microphone,
 } from "@phosphor-icons/react";
 import YoutubeLogo from "../../assets/img/youtubelogo.png";
 
@@ -25,7 +27,17 @@ const Nav = () => {
             src={YoutubeLogo}
             alt="youtubeLogo"
           />
+          <div className="searchbar-wrapper">
+            <input type="text" placeholder="Search" />
+            <button className="searchbar-icon__btn">
+              <MagnifyingGlass size={20} color="#f3f3f3" />
+            </button>
+            <button className="searchbar-mic__btn">
+              <Microphone size={20} color="#f3f3f3" />
+            </button>
+          </div>
         </div>
+
         <ul>
           <button>
             <li>
