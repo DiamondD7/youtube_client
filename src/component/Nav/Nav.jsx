@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Basketball,
   Code,
@@ -12,6 +12,7 @@ import YoutubeLogo from "../../assets/img/youtubelogo.png";
 
 import "../../styles/navstyles.css";
 const Nav = () => {
+  const [navActive, setNavActive] = useState("");
   return (
     <>
       <div className="nav-wrapper__container">
