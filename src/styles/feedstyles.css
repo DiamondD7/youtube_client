@@ -1,0 +1,28 @@
+.feed__wrapper{
+    position: absolute;
+    top:55%;
+    left:56.5%;
+    transform: translate(-50%, -50%);
+
+    /* background-color: red; */
+    height: 90%;
+    width:87%;
+}
+
+.grid-videos__wrapper{
+    display: grid;
+    grid-template-columns: repeat(5,300px);
+    padding: 20px;
+    gap: 20px;
+}
+
+.videos__wrapper{
+    /* background-color: blue; */
+    height: 300px;
+    width: 300px;
+}
+
+.videos-image{
+    width: 400px;
+    height: 300px;
+}
