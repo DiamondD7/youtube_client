@@ -1,28 +1,58 @@
 .feed__wrapper{
     position: absolute;
     top:55%;
-    left:56.5%;
+    left:55.5%;
     transform: translate(-50%, -50%);
 
-    /* background-color: red; */
+    
     height: 90%;
     width:87%;
+    
 }
 
 .grid-videos__wrapper{
     display: grid;
     grid-template-columns: repeat(5,300px);
     padding: 20px;
-    gap: 20px;
+    gap: 30px;
 }
 
 .videos__wrapper{
-    /* background-color: blue; */
-    height: 300px;
+    
     width: 300px;
 }
 
+.videos__wrapper button{
+    background-color: transparent;
+    border: none;
+    text-align: start;
+    cursor: pointer;
+    transition: all .5s ease-in;
+}
+
+.videos__wrapper button:hover{
+    box-shadow: rgba(0, 0, 0, 0.9) -2px 5px 15px 5px;
+    transform: scale(1.1);
+    background-color: transparent;
+    border: none;
+    transition: all .5s ease-in;
+}
+
 .videos-image{
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+
+.snippet-title__text{
+    color: #f3f3f3;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.snippet-channelName__text{
+    color: rgba(244, 244, 244, 0.5);
+    font-size: 14px;
+    padding: 5px;
 }

@@ -3,9 +3,9 @@ import { BASE_URL } from "../../assets/js/ApiAuth";
 
 import "../../styles/feedstyles.css";
 
-const Feed = () => {
+const Feed = ({ category }) => {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
-  const [category, setCategory] = useState("Sports");
+  // const [category, setCategory] = useState(cat);
   useEffect(() => {
     fetch(
       `${BASE_URL}search?part=snippet&q=${category}&type=video&maxResults=50`,
@@ -22,19 +22,24 @@ const Feed = () => {
         setSuggestedVideos(data.items);
       });
   }, [category]);
-  // console.log(suggestedVideos);
+
   return (
     <div className="feed__wrapper">
       <div className="grid-videos__wrapper">
-        {/* {suggestedVideos.map((items) => {
-          <div className="videos__wrapper">
-            <h1>{items.snippet.channelTitle}</h1>
-            <img
-              className="videos-image"
-              src={items.snippet.thumbnails.high.url}
-            />
-          </div>;
-        })} */}
+        {suggestedVideos.map((items, index) => (
+          <div className="videos__wrapper" key={index}>
+            <button>
+              <img
+                className="videos-image"
+                src={items.snippet.thumbnails.medium.url}
+              />
+              <p className="snippet-title__text">{items.snippet.title}</p>
+              <p className="snippet-channelName__text">
+                {items.snippet.channelTitle}
+              </p>
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );

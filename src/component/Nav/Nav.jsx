@@ -13,8 +13,14 @@ import {
 import YoutubeLogo from "../../assets/img/youtubelogo.png";
 
 import "../../styles/navstyles.css";
-const Nav = () => {
-  const [navActive, setNavActive] = useState("");
+const Nav = ({ setCategory }) => {
+  const [navActive, setNavActive] = useState(""); //do this later
+
+  const onClickCategory = (e, cat) => {
+    e.preventDefault();
+    setCategory(cat);
+  };
+
   return (
     <>
       <div className="nav-wrapper__container">
@@ -39,38 +45,38 @@ const Nav = () => {
         </div>
 
         <ul>
-          <button>
+          <button onClick={(e) => onClickCategory(e, "Sports")}>
             <li>
               <Basketball size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
               &nbsp; Sports
             </li>
           </button>
-          <button>
+          <button onClick={(e) => onClickCategory(e, "Coding")}>
             <li>
               <Code size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
               Coding
             </li>
           </button>
 
-          <button>
+          <button onClick={(e) => onClickCategory(e, "Politics")}>
             <li>
               <Gavel size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
               Politics
             </li>
           </button>
-          <button>
+          <button onClick={(e) => onClickCategory(e, "News")}>
             <li>
               <Newspaper size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
               &nbsp; News
             </li>
           </button>
-          <button>
+          <button onClick={(e) => onClickCategory(e, "Animals")}>
             <li>
               <PawPrint size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
               Animals
             </li>
           </button>
-          <button>
+          <button onClick={(e) => onClickCategory(e, "Planet")}>
             <li>
               <GlobeHemisphereEast size={20} color="rgba(244,244,244,0.7)" />{" "}
               &nbsp; &nbsp; Planet
