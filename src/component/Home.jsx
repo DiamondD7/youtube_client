@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./Nav/Nav";
 import Feed from "./Feed/Feed";
 
 const Home = () => {
+  const [category, setCategory] = useState("Sports");
+
   return (
     <>
-      <Nav />
-      <Feed />
+      <Nav setCategory={setCategory} />
+      <Feed category={category} />
     </>
   );
 };
