@@ -9,6 +9,16 @@ import {
   List,
   MagnifyingGlass,
   Microphone,
+  MusicNotes,
+  Atom,
+  MicrophoneStage,
+  GameController,
+  VideoCamera,
+  Bicycle,
+  HandHeart,
+  FilmSlate,
+  TrendUp,
+  Exam,
 } from "@phosphor-icons/react";
 import YoutubeLogo from "../../assets/img/youtubelogo.png";
 
@@ -45,6 +55,12 @@ const Nav = ({ setCategory }) => {
         </div>
 
         <ul>
+          <button onClick={(e) => onClickCategory(e, "Trending")}>
+            <li>
+              <TrendUp size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
+              Trending
+            </li>
+          </button>
           <button onClick={(e) => onClickCategory(e, "Sports")}>
             <li>
               <Basketball size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
@@ -55,6 +71,18 @@ const Nav = ({ setCategory }) => {
             <li>
               <Code size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
               Coding
+            </li>
+          </button>
+          <button onClick={(e) => onClickCategory(e, "Learning")}>
+            <li>
+              <Exam size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
+              Learning
+            </li>
+          </button>
+          <button onClick={(e) => onClickCategory(e, "Biking")}>
+            <li>
+              <Bicycle size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
+              Biking
             </li>
           </button>
 
@@ -70,6 +98,12 @@ const Nav = ({ setCategory }) => {
               &nbsp; News
             </li>
           </button>
+          <button onClick={(e) => onClickCategory(e, "Movies")}>
+            <li>
+              <FilmSlate size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
+              &nbsp; Movies
+            </li>
+          </button>
           <button onClick={(e) => onClickCategory(e, "Animals")}>
             <li>
               <PawPrint size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
@@ -80,6 +114,42 @@ const Nav = ({ setCategory }) => {
             <li>
               <GlobeHemisphereEast size={20} color="rgba(244,244,244,0.7)" />{" "}
               &nbsp; &nbsp; Planet
+            </li>
+          </button>
+          <button onClick={(e) => onClickCategory(e, "Music")}>
+            <li>
+              <MusicNotes size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
+              &nbsp; Music
+            </li>
+          </button>
+          <button onClick={(e) => onClickCategory(e, "Podcast")}>
+            <li>
+              <MicrophoneStage size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
+              &nbsp; Podcasts
+            </li>
+          </button>
+          <button onClick={(e) => onClickCategory(e, "Science")}>
+            <li>
+              <Atom size={20} color="rgba(244,244,244,0.7)" /> &nbsp; &nbsp;
+              Science
+            </li>
+          </button>
+          <button onClick={(e) => onClickCategory(e, "Gaming")}>
+            <li>
+              <GameController size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
+              &nbsp; Gaming
+            </li>
+          </button>
+          <button onClick={(e) => onClickCategory(e, "Live")}>
+            <li>
+              <VideoCamera size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
+              &nbsp; Live
+            </li>
+          </button>
+          <button onClick={(e) => onClickCategory(e, "Social Experiment")}>
+            <li>
+              <HandHeart size={20} color="rgba(244,244,244,0.7)" /> &nbsp;
+              &nbsp; Social Experiment
             </li>
           </button>
         </ul>
