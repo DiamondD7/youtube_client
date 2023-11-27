@@ -5,8 +5,8 @@ import "../../styles/feedstyles.css";
 
 const Feed = ({ category }) => {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
-  // const [category, setCategory] = useState(cat);
   useEffect(() => {
+    setSuggestedVideos([]);
     fetch(
       `${BASE_URL}search?part=snippet&q=${category}&type=video&maxResults=50`,
       {
@@ -25,22 +25,26 @@ const Feed = ({ category }) => {
 
   return (
     <div className="feed__wrapper">
-      <div className="grid-videos__wrapper">
-        {suggestedVideos.map((items, index) => (
-          <div className="videos__wrapper" key={index}>
-            <button>
-              <img
-                className="videos-image"
-                src={items.snippet.thumbnails.medium.url}
-              />
-              <p className="snippet-title__text">{items.snippet.title}</p>
-              <p className="snippet-channelName__text">
-                {items.snippet.channelTitle}
-              </p>
-            </button>
-          </div>
-        ))}
-      </div>
+      {suggestedVideos.length === 0 ? (
+        <div className="loading"></div>
+      ) : (
+        <div className="grid-videos__wrapper">
+          {suggestedVideos.map((items, index) => (
+            <div className="videos__wrapper" key={index}>
+              <button>
+                <img
+                  className="videos-image"
+                  src={items.snippet.thumbnails.medium.url}
+                />
+                <p className="snippet-title__text">{items.snippet.title}</p>
+                <p className="snippet-channelName__text">
+                  {items.snippet.channelTitle}
+                </p>
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
