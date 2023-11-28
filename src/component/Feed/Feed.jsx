@@ -3,7 +3,7 @@ import { BASE_URL } from "../../assets/js/ApiAuth";
 
 import "../../styles/feedstyles.css";
 
-const Feed = ({ category }) => {
+const Feed = ({ category, searchLists }) => {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
   useEffect(() => {
     setSuggestedVideos([]);
@@ -22,6 +22,11 @@ const Feed = ({ category }) => {
         setSuggestedVideos(data.items);
       });
   }, [category]);
+
+  useEffect(() => {
+    setSuggestedVideos(searchLists);
+    console.log("searchlist updated");
+  }, [searchLists]);
 
   return (
     <div className="feed__wrapper">

@@ -21,14 +21,31 @@ import {
   Exam,
 } from "@phosphor-icons/react";
 import YoutubeLogo from "../../assets/img/youtubelogo.png";
+import { BASE_URL } from "../../assets/js/ApiAuth";
 
 import "../../styles/navstyles.css";
-const Nav = ({ setCategory }) => {
+const Nav = ({ setCategory, setSearchLists }) => {
   const [navActive, setNavActive] = useState(""); //do this later
+  const [search, setSearch] = useState("");
+  const [searchedLists, setSearchedLists] = useState([]);
 
   const onClickCategory = (e, cat) => {
     e.preventDefault();
     setCategory(cat);
+  };
+
+  const onClickSearch = () => {
+    fetch(`${BASE_URL}search?q=${search}&part=snippet&maxResults=50`, {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": import.meta.env.VITE_RAPID_API_KEY,
+        "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setSearchLists(data.items);
+      });
   };
 
   return (
@@ -44,8 +61,12 @@ const Nav = ({ setCategory }) => {
             alt="youtubeLogo"
           />
           <div className="searchbar-wrapper">
-            <input type="text" placeholder="Search" />
-            <button className="searchbar-icon__btn">
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <button className="searchbar-icon__btn" onClick={onClickSearch}>
               <MagnifyingGlass size={20} color="#f3f3f3" />
             </button>
             <button className="searchbar-mic__btn">
