@@ -24,8 +24,10 @@ const Feed = ({ category, searchLists }) => {
   }, [category]);
 
   useEffect(() => {
-    setSuggestedVideos(searchLists);
-    console.log("searchlist updated");
+    setSuggestedVideos([]);
+    setTimeout(() => {
+      setSuggestedVideos(searchLists);
+    }, 1000);
   }, [searchLists]);
 
   return (
