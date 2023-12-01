@@ -55,11 +55,13 @@ const Nav = ({ setCategory, setSearchLists }) => {
           <div>
             <List size={24} color="rgba(244,244,244,0.7)" />
           </div>
-          <img
-            className="youtube-logo__img"
-            src={YoutubeLogo}
-            alt="youtubeLogo"
-          />
+          <button className="btn-logo">
+            <img
+              className="youtube-logo__img"
+              src={YoutubeLogo}
+              alt="youtubeLogo"
+            />
+          </button>
           <div className="searchbar-wrapper">
             <input
               type="text"

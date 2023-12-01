@@ -43,6 +43,12 @@
     width: 100px;
 }
 
+.btn-logo{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .searchbar-wrapper{
     margin-left: 470px; 
     display: flex;
