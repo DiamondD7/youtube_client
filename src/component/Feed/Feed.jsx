@@ -39,14 +39,20 @@ const Feed = ({ category, searchLists }) => {
           {suggestedVideos.map((items, index) => (
             <div className="videos__wrapper" key={index}>
               <button>
-                <img
-                  className="videos-image"
-                  src={items.snippet.thumbnails.medium.url}
-                />
-                <p className="snippet-title__text">{items.snippet.title}</p>
-                <p className="snippet-channelName__text">
-                  {items.snippet.channelTitle}
-                </p>
+                <a
+                  href={`https://www.youtube.com/watch?v=${items.id.videoId}`}
+                  target="_blank"
+                  className="anchor-video"
+                >
+                  <img
+                    className="videos-image"
+                    src={items.snippet.thumbnails.medium.url}
+                  />
+                  <p className="snippet-title__text">{items.snippet.title}</p>
+                  <p className="snippet-channelName__text">
+                    {items.snippet.channelTitle}
+                  </p>
+                </a>
               </button>
             </div>
           ))}

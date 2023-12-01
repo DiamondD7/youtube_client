@@ -48,6 +48,10 @@ const Nav = ({ setCategory, setSearchLists }) => {
       });
   };
 
+  const refreshPageOnClicked = () => {
+    window.location.reload();
+  };
+
   return (
     <>
       <div className="nav-wrapper__container">
@@ -55,7 +59,7 @@ const Nav = ({ setCategory, setSearchLists }) => {
           <div>
             <List size={24} color="rgba(244,244,244,0.7)" />
           </div>
-          <button className="btn-logo">
+          <button className="btn-logo" onClick={refreshPageOnClicked}>
             <img
               className="youtube-logo__img"
               src={YoutubeLogo}

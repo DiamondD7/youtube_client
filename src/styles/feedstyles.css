@@ -38,6 +38,10 @@
     transition: all .5s ease-in;
 }
 
+.anchor-video{
+    text-decoration: none;
+}
+
 .videos-image{
     width: 300px;
     border-radius: 10px;
